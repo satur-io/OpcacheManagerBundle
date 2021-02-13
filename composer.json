@@ -50,11 +50,6 @@
             "Dhernandez\\": "src/"
         }
     },
-    "replace": {
-        "symfony/polyfill-ctype": "*",
-        "symfony/polyfill-iconv": "*",
-        "symfony/polyfill-php74": "*"
-    },
     "conflict": {
         "symfony/symfony": "*"
     },

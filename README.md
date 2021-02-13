@@ -26,6 +26,7 @@ get_configuration:
 
 I recommend limit the access to the routes by IP, authorizing only request from localhost
 ```yaml
+# api/config/packages/security.yaml
 security:
     # ...
     access_control:
