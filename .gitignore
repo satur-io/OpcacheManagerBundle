@@ -19,3 +19,4 @@ bin
 composer.lock
 symfony.lock
 src/Tests/TestApplication/var
+.idea
