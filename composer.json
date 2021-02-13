@@ -9,7 +9,6 @@
         "cli",
         "ci",
         "cd",
-        "ci/cd",
         "php",
         "symfony",
         "bundle"
