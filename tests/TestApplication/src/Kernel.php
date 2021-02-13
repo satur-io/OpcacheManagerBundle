@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Dhernandez\Tests\TestApplication\src;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -10,6 +10,11 @@ use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
+
+    public function getProjectDir(): string
+    {
+        return \dirname(__DIR__);
+    }
 
     protected function configureContainer(ContainerConfigurator $container): void
     {

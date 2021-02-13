@@ -1,0 +1,2 @@
+services:
+    Dhernandez\Tests\Helper\MockClientCallback: ~
