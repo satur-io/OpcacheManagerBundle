@@ -7,7 +7,7 @@ services:
     Dhernandez\:
         resource: '../../'
         exclude:
-            - '../src/DependencyInjection/'
-            - '../src/Entity/'
-            - '../src/Kernel.php'
-            - '../src/Tests/'
+            - '../../DependencyInjection/'
+            - '../../Entity/'
+            - '../../Kernel.php'
+            - '../../Tests/'

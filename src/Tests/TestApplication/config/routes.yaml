@@ -1,0 +1,2 @@
+imports:
+    resource: '../../../Resources/config/routing.yaml'

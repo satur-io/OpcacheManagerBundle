@@ -1,2 +1,0 @@
-imports:
-    resource: '../../../../../../OPcacheManagerBundle/src/Resources/config/services_test.yaml'
