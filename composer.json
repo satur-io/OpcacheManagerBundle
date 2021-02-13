@@ -1,6 +1,6 @@
 {
     "type": "symfony-bundle",
-    "name": "OPcacheManagerBundle",
+    "name": "dhernandez/opcache-manager",
     "license": "MIT",
     "description": "Reset cache, show summary information and get configuration about de OPcache",
     "keywords": [
