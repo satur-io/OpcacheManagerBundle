@@ -4,10 +4,30 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-    Dhernandez\:
+    Saturio\OpcacheManagerBundle\:
         resource: '../../'
         exclude:
             - '../../DependencyInjection/'
             - '../../Entity/'
             - '../../Kernel.php'
             - '../../Tests/'
+
+    Saturio\OpcacheManagerBundle\Route\RouteLoader:
+        tags: ['routing.loader']
+
+    Saturio\OpcacheManagerBundle\Command\BaseCommand: ~
+
+    Saturio\OpcacheManagerBundle\Command\StatusCommand:
+        tags: ['console.command']
+        arguments:
+            $defaultUri: 'http://127.0.0.1'
+
+    Saturio\OpcacheManagerBundle\Command\ConfigurationCommand:
+        tags: ['console.command']
+        arguments:
+            $defaultUri: 'http://127.0.0.1'
+
+    Saturio\OpcacheManagerBundle\Command\ResetCommand:
+        tags: ['console.command']
+        arguments:
+            $defaultUri: 'http://127.0.0.1'

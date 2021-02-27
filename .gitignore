@@ -18,5 +18,11 @@
 bin
 composer.lock
 symfony.lock
-src/Tests/TestApplication/var
 .idea
+
+# Tests generated files
+/config/
+/public/
+/src/Kernel.php
+/tests/
+src/Tests/TestApplication/var

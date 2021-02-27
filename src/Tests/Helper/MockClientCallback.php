@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Dhernandez\Tests\Helper;
+namespace Saturio\OpcacheManagerBundle\Tests\Helper;
 
 
 use Symfony\Component\HttpClient\Response\MockResponse;

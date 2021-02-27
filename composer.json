@@ -1,6 +1,6 @@
 {
     "type": "symfony-bundle",
-    "name": "dhernandez/opcache-manager",
+    "name": "saturio/opcache-manager",
     "license": "MIT",
     "description": "Reset cache, show summary information and get configuration about de OPcache",
     "keywords": [
@@ -47,7 +47,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Dhernandez\\": "src/"
+            "Saturio\\OpcacheManagerBundle\\": "src/"
         }
     },
     "conflict": {

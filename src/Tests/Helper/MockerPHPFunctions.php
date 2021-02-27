@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhernandez\Controller;
+namespace Saturio\OpcacheManagerBundle\Controller;
 
 function opcache_reset(): bool
 {
@@ -21,7 +21,7 @@ function opcache_get_configuration(): bool
 }
 
 
-namespace Dhernandez\Tests\Helper;
+namespace Saturio\OpcacheManagerBundle\Tests\Helper;
 
 
 trait MockerPHPFunctions

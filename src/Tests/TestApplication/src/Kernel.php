@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhernandez\Tests\TestApplication\src;
+namespace Saturio\OpcacheManagerBundle\Tests\TestApplication\src;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;

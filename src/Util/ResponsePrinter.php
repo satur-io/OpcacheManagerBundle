@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Dhernandez\Util;
+namespace Saturio\OpcacheManagerBundle\Util;
 
 
 use Symfony\Component\Console\Output\OutputInterface;
@@ -28,9 +28,9 @@ trait ResponsePrinter
     protected function printHeaders(OutputInterface $output, ?array $headers): void
     {
         $output->writeln('<fg=white;options=bold>Headers</>');
-        $output->writeln('<fg=white;options=bold>=======s</>');
-        $output->writeln(sprintf('<fg=cyan;options=conceal>%s</>',
-            json_encode($headers, JSON_PRETTY_PRINT)));
+        $output->writeln('<fg=white;options=bold>=======</>');
+        $output->writeln(sprintf('<fg=cyan>%s</>',
+            json_encode($headers, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)));
     }
 
     protected function printContent(OutputInterface $output, string $content): void

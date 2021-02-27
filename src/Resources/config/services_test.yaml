@@ -1,2 +1,2 @@
 services:
-    Dhernandez\Tests\Helper\MockClientCallback: ~
+    Saturio\OpcacheManagerBundle\Tests\Helper\MockClientCallback: ~

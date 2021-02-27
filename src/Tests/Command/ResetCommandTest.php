@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Dhernandez\Tests\Command;
+namespace Saturio\OpcacheManagerBundle\Tests\Command;
 
 
-use Dhernandez\Tests\Helper\MockerPHPFunctions;
+use Saturio\OpcacheManagerBundle\Tests\Helper\MockerPHPFunctions;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
@@ -20,7 +20,7 @@ class ResetCommandTest extends KernelTestCase
         $kernel = static::createKernel();
         $application = new Application($kernel);
 
-        $command = $application->find('dhernandez:opcache:reset');
+        $command = $application->find('saturio:opcache:reset');
         $commandTester = new CommandTester($command);
         $commandTester->execute([]);
         $output = $commandTester->getDisplay();
@@ -33,7 +33,7 @@ class ResetCommandTest extends KernelTestCase
         $kernel = static::createKernel();
         $application = new Application($kernel);
 
-        $command = $application->find('dhernandez:opcache:reset');
+        $command = $application->find('saturio:opcache:reset');
         $commandTester = new CommandTester($command);
         $commandTester->execute([]);
         $output = $commandTester->getDisplay();

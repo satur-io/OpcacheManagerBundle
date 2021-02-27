@@ -1,9 +1,9 @@
 <?php
 
-namespace Dhernandez\Tests\Controller;
+namespace Saturio\OpcacheManagerBundle\Tests\Controller;
 
 
-use Dhernandez\Tests\Helper\MockerPHPFunctions;
+use Saturio\OpcacheManagerBundle\Tests\Helper\MockerPHPFunctions;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 

@@ -1,6 +1,6 @@
 <?php
 
-use Dhernandez\Tests\TestApplication\src\Kernel;
+use Saturio\OpcacheManagerBundle\Tests\TestApplication\src\Kernel;
 use Symfony\Component\HttpFoundation\Request;
 
 require dirname(__DIR__).'/../bootstrap.php';

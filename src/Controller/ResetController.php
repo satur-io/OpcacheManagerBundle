@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Dhernandez\Controller;
+namespace Saturio\OpcacheManagerBundle\Controller;
 
 
 use Symfony\Component\HttpFoundation\Response;

@@ -1,2 +1,3 @@
-imports:
-    resource: '../../../Resources/config/routing.yaml'
+opcache_routes:
+    resource: .
+    type: opcachemanager
