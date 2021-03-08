@@ -55,19 +55,29 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
-
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
+    - name: "Install PHP"
+      uses: "shivammathur/setup-php@v2"
       with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+        coverage: "none"
+        php-version: "${{ matrix.php-version }}"
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest
+    - name: Display versions
+      run: |
+          php -r 'foreach (get_loaded_extensions() as $extension) echo $extension . " " . phpversion($extension) . PHP_EOL;'
+          php -i
+
+    - name: "Globally install symfony/flex"
+      run: "composer global require --no-progress --no-scripts --no-plugins symfony/flex"
+
+    - name: "Enforce using stable dependencies"
+      run: "composer config minimum-stability stable"
+      if: "${{ matrix.stability == 'stable' }}"
+
+    - name: "Install dependencies with Composer"
+        uses: "ramsey/composer-install@v1"
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+          composer-options: "--prefer-dist"
+
     - name: "Run PHPUnit"
       run: "vendor/bin/simple-phpunit --coverage-clover=coverage.xml"
