@@ -1,5 +1,8 @@
 <?php
 
+/** @noinspection PhpSignatureMismatchDuringInheritanceInspection */
+/** @noinspection PhpHierarchyChecksInspection */
+
 
 namespace Saturio\OpcacheManagerBundle\Route;
 
@@ -36,7 +39,7 @@ class RouteLoader extends Loader
     private const ROUTES = [self::RESET_PARAMS, self::STATUS_PARAMS, self::CONFIGURATION_PARAMS];
 
 
-    public function load($resource, string $type = null)
+    public function load($resource, $type = null)
     {
         if (getenv(Router::ENV_VAR_ACTIVATE_ROUTES_NAME) !== Router::ENV_VAR_ACTIVATE_ROUTES_ACTIVATE_VALUE) {
             return new RouteCollection();
