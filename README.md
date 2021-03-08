@@ -29,7 +29,7 @@ To improve performance, you could run the `cache:warmup` symfony command when Op
 ## Instalation
 
 ```shell script
-composer require saturio/saturio/opcache-manager
+composer require saturio/opcache-manager
 ```
 
 ## Configuration
