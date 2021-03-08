@@ -5,7 +5,7 @@ namespace Saturio\OpcacheManagerBundle\Command;
 
 
 use Saturio\OpcacheManagerBundle\Util\ResponsePrinter;
-use Saturio\OpcacheManagerBundle\Util\Router;
+use Saturio\OpcacheManagerBundle\Route\Router;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

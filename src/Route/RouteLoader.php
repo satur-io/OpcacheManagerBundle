@@ -7,7 +7,6 @@ namespace Saturio\OpcacheManagerBundle\Route;
 use Saturio\OpcacheManagerBundle\Controller\ConfigurationController;
 use Saturio\OpcacheManagerBundle\Controller\ResetController;
 use Saturio\OpcacheManagerBundle\Controller\StatusController;
-use Saturio\OpcacheManagerBundle\Util\Router;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;

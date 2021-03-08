@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Saturio\OpcacheManagerBundle\Util;
+namespace Saturio\OpcacheManagerBundle\Route;
 
 
 use Symfony\Component\Console\Application;
