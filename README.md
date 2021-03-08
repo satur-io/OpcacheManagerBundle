@@ -13,14 +13,13 @@ application cache using a CLI. So, if you want to clean your symfony app cache, 
 `opcache_reset()` function ***in your web server or your php-fpm process***. That is mean that
 you need a URL in your app that call the reset function. 
 
-This is a big problem when the we use CI/CD tools for the deployment since we can't reset the cache
-launching a command. And although we could create an endpoint in our application for this task, we face the problem 
-of security, since it should only be able to be executed from the tasks that we consider.
+This is a headache when we use CI/CD tools for the deployment, since we can't reset the cache
+launching a command.
 
 ### OpcacheManagerBundle solution
 OpcacheManagerBundle deals with this issue using routes build on execution time. We provide symfony commands
 that create the routes for do the opcache tasks. Then, the command make a request to the created route and 
-remove it when finish, so the routes only are available a few miliseconds.
+remove it when finish, so the routes are only available a few milliseconds.
 
 ***Please note that in this flow force the symfony cache dir will be removed.***
 
