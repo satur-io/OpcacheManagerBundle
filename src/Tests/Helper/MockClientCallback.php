@@ -16,4 +16,10 @@ class MockClientCallback
         self::$error = !self::$error;
         return new MockResponse('{"cosa": "test"}', ['http_code' => self::$error ? 500 : 200]);
     }
+
+    public static function __invokeFromSymfony4(string $method, string $url, array $options = []): ResponseInterface
+    {
+        self::$error = !self::$error;
+        return new MockResponse('{"cosa": "test"}', ['http_code' => self::$error ? 500 : 200]);
+    }
 }

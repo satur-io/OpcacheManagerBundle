@@ -36,6 +36,6 @@ trait ResponsePrinter
         $message = json_encode(json_decode($content), self::$JSON_OPTIONS);
 
         $io->section('Body');
-        $message === 'null' ? $io->info('Empty Body') : $io->text($message);;
+        $message === 'null' ? $io->text('Empty Body') : $io->text($message);;
     }
 }

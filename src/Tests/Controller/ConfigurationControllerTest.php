@@ -16,7 +16,6 @@ class ConfigurationControllerTest extends WebTestCase
         $this->setConfigurationResult(true);
         $client = static::createClient();
         $client->request('GET', '/opcache/configuration');
-
         $this->assertResponseStatusCodeSame(200);
     }
 

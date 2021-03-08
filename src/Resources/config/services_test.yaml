@@ -1,2 +1,4 @@
 services:
     Saturio\OpcacheManagerBundle\Tests\Helper\MockClientCallback: ~
+    # Saturio\OpcacheManagerBundle\Tests\Helper\MockTestClient:
+    #    tags: ['test.client']

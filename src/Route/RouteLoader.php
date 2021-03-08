@@ -68,7 +68,7 @@ class RouteLoader extends Loader
         return $routes;
     }
 
-    public function supports($resource, string $type = null)
+    public function supports($resource, $type = null)
     {
         return 'opcachemanager' === $type;
     }

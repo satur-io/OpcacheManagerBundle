@@ -49,12 +49,12 @@ trait BaseCommand
             $io->error('Something goes wrong');
             $this->printResponse($io, $response);
             $io->error($this->errorMessage);
-            return Command::FAILURE;
+            return defined('Command::FAILURE') ? Command::FAILURE : 1;
         }
 
         $this->printResponse($io, $response);
         $io->success($this->okMessage);
-        return Command::SUCCESS;
+        return defined('Command::SUCCESS') ? Command::SUCCESS : 0;
     }
 
     protected function routeValues(string $route, string $okMessage, string $errorMessage)
