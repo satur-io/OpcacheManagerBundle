@@ -4,40 +4,38 @@
 namespace Saturio\OpcacheManagerBundle\Util;
 
 
-use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Contracts\HttpClient\ResponseInterface;
 
 trait ResponsePrinter
 {
-    protected function printResponse(OutputInterface $output, \Symfony\Contracts\HttpClient\ResponseInterface $response): void
+    private static int $JSON_OPTIONS = JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE;
+
+    protected function printResponse(SymfonyStyle $io, ResponseInterface $response): void
     {
-        $this->printCode($output, $response->getStatusCode());
-        $output->writeln('');
-        $this->printHeaders($output, $response->getHeaders(false));
-        $output->writeln('');
-        $this->printContent($output, $response->getContent(false));
+        $this->printCode($io, $response->getStatusCode());
+        $this->printHeaders($io, $response->getHeaders(false));
+        $this->printContent($io, $response->getContent(false));
     }
 
-    protected function printCode(OutputInterface $output, int $statusCode): void
+    private function printCode(SymfonyStyle $io, int $statusCode): void
     {
-        $output->writeln(sprintf('Code response: <fg=white;bg=%s;options=bold>%s</>',
-            $statusCode === Response::HTTP_OK ? 'green' : 'red',
-            $statusCode));
+        $message = sprintf('Code response: %s', $statusCode);
+        $statusCode === Response::HTTP_OK ? $io->success($message) : $io->error($message);
     }
 
-    protected function printHeaders(OutputInterface $output, ?array $headers): void
+    private function printHeaders(SymfonyStyle $io, ?array $headers): void
     {
-        $output->writeln('<fg=white;options=bold>Headers</>');
-        $output->writeln('<fg=white;options=bold>=======</>');
-        $output->writeln(sprintf('<fg=cyan>%s</>',
-            json_encode($headers, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)));
+        $io->section('Headers');
+        $io->text(json_encode($headers, self::$JSON_OPTIONS));
     }
 
-    protected function printContent(OutputInterface $output, string $content): void
+    private function printContent(SymfonyStyle $io, string $content): void
     {
-        $output->writeln('<fg=white;options=bold>Body</>');
-        $output->writeln('<fg=white;options=bold>====</>');
-        $output->writeln(sprintf('<fg=white;bg=cyan>%s</>',
-            json_encode(json_decode($content), JSON_PRETTY_PRINT)));
+        $message = json_encode(json_decode($content), self::$JSON_OPTIONS);
+
+        $io->section('Body');
+        $message === 'null' ? $io->info('Empty Body') : $io->text($message);;
     }
 }
