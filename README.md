@@ -13,17 +13,17 @@ application cache using a CLI. So, if you want to clean your symfony app cache, 
 `opcache_reset()` function ***in your web server or your php-fpm process***. That is mean that
 you need a URL in your app that call the reset function. 
 
+Of course, you could use something like `php7.4-fpm reload` to refresh OPCache if the user you use
+for deployment has permissions.
+
 This is a headache when we use CI/CD tools for the deployment, since we can't reset the cache
 launching a command.
 
 ### OpcacheManagerBundle solution
-OpcacheManagerBundle deals with this issue using routes build on execution time. We provide symfony commands
-that create the routes for do the opcache tasks. Then, the command make a request to the created route and 
-remove it when finish, so the routes are only available a few milliseconds.
-
-***Please note that in this flow force the symfony cache dir will be removed.***
-
-To improve performance, you could run the `cache:warmup` symfony command when OpcacheManager finish.
+OpcacheManagerBundle provides some routes to manage your OPCache through symfony commands.
+These commands make signed requests to the routes and show results in console. For security reasons,
+the request must to be signed (the bundle manage this by itself), so it can't be use directly unless
+the `APP_SECRET` is known.
 
 ## Instalation
 
@@ -44,14 +44,13 @@ return [
 ];
 ```
 
-Add the OpcacheManager route loader to your routes:
+Add the OpcacheManager routes:
 
 ```yaml
 # config/routes/opcache_manager.yml
 
-opcache_routes:
-    resource: .
-    type: opcachemanager
+saturio_opcache:
+    resource: "@SaturioOpcacheManagerBundle/Resources/config/routing.yaml"
 ```
 
 And, finally, configure the OpcacheManager:
@@ -64,8 +63,7 @@ saturio_opcache_manager:
 
 
 ## Usage
-:point_right: Note that you must have a server running your app. OPCache can't be usually managed from
-CLI. OPCacheManager creates API resources and make requests to these endpoints to manage the OPCache.
+:point_right: Note that you must have a server running your app to use OPCacheManagerBundle.
 
 Use these simple commands:
 

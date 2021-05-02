@@ -1,2 +1,2 @@
-access:
+saturio_opcache:
     resource: "@SaturioOpcacheManagerBundle/Resources/config/routing.yaml"
