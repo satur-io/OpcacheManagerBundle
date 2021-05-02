@@ -1,0 +1,7 @@
+[
+    {
+        "location": "Saturio\\OpcacheManagerBundle\\Tests\\Command\\ConfigurationCommandTest::testOkExecute",
+        "message": "Class \"Symfony\\Component\\HttpClient\\MockHttpClient\" should implement method \"Symfony\\Contracts\\HttpClient\\HttpClientInterface::withOptions(array $options)\": Returns a new instance of the client with new default options.",
+        "count": 1
+    }
+]
