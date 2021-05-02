@@ -45,12 +45,12 @@ jobs:
           - symfony-require: "5.*"
             dependencies: "highest"
             php-version: "7.4"
-            symfony-deprecations-helper: "weak"
+            symfony-deprecations-helper: "baselineFile=src/Tests/allowed.json"
 
           - php-version: "8.0"
             dependencies: "highest"
             stability: "dev"
-            symfony-deprecations-helper: "weak"
+            symfony-deprecations-helper: "baselineFile=src/Tests/allowed.json"
 
     steps:
     - uses: actions/checkout@v2
@@ -83,4 +83,4 @@ jobs:
       run: "rm src/Kernel.php"
 
     - name: "Run PHPUnit"
-      run: "SYMFONY_DEPRECATIONS_HELPER='baselineFile=src/Tests/allowed.json' vendor/bin/simple-phpunit --coverage-clover=coverage.xml"
+      run: "vendor/bin/simple-phpunit --coverage-clover=coverage.xml"
