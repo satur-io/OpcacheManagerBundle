@@ -83,4 +83,4 @@ jobs:
       run: "rm src/Kernel.php"
 
     - name: "Run PHPUnit"
-      run: "vendor/bin/simple-phpunit --coverage-clover=coverage.xml"
+      run: "SYMFONY_DEPRECATIONS_HELPER='baselineFile=src/Tests/allowed.json' vendor/bin/simple-phpunit --coverage-clover=coverage.xml"
