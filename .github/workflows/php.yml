@@ -27,7 +27,7 @@ jobs:
         symfony-require:
           - ""
         symfony-deprecations-helper:
-          - ""
+          - "baselineFile=src/Tests/allowed.json"
         include:
           # Tests the lowest set of dependencies
           - dependencies: "lowest"
@@ -45,12 +45,12 @@ jobs:
           - symfony-require: "5.*"
             dependencies: "highest"
             php-version: "7.4"
-            symfony-deprecations-helper: "baselineFile=src/Tests/allowed.json"
+            symfony-deprecations-helper: "weak"
 
           - php-version: "8.0"
             dependencies: "highest"
             stability: "dev"
-            symfony-deprecations-helper: "baselineFile=src/Tests/allowed.json"
+            symfony-deprecations-helper: "weak"
 
     steps:
     - uses: actions/checkout@v2
