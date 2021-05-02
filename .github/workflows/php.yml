@@ -79,5 +79,8 @@ jobs:
         dependency-versions: "${{ matrix.dependencies }}"
         composer-options: "--prefer-dist"
 
+    - name: "Remove default kernel"
+      run: "rm src/Kernel.php"
+
     - name: "Run PHPUnit"
       run: "vendor/bin/simple-phpunit --coverage-clover=coverage.xml"
