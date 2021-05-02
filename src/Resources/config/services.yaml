@@ -8,11 +8,7 @@ services:
         resource: '../../'
         exclude:
             - '../../DependencyInjection/'
-            - '../../Kernel.php'
             - '../../Tests/'
-
-    Saturio\OpcacheManagerBundle\Route\RouteLoader:
-        tags: ['routing.loader']
 
     Saturio\OpcacheManagerBundle\Command\BaseCommand: ~
 
@@ -30,3 +26,6 @@ services:
         tags: ['console.command']
         arguments:
             $defaultUri: 'http://127.0.0.1'
+
+    Symfony\Component\HttpKernel\UriSigner:
+        alias: 'uri_signer'

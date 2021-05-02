@@ -31,8 +31,6 @@ class ConfigurationCommand extends Command
     {
         parent::initialize($input, $output);
 
-        $this->addRoutes();
-
         $this->routeValues(
             'opcache/configuration',
             'This is your OPcache configuration',

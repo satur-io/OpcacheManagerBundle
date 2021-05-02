@@ -1,3 +1,3 @@
 saturio_opcache_manager:
     server:
-        default_uri: 'http://127.0.0.1:8000'
+        default_uri: 'http://127.0.0.1'

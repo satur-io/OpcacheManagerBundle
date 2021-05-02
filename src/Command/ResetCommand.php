@@ -31,8 +31,6 @@ class ResetCommand extends Command
     {
         parent::initialize($input, $output);
 
-        $this->addRoutes();
-
         $this->routeValues(
             'opcache/reset',
             'Cache reset',

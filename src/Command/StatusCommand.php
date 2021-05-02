@@ -28,8 +28,6 @@ class StatusCommand extends Command
     {
         parent::initialize($input, $output);
 
-        $this->addRoutes();
-
         $this->routeValues(
             'opcache/status',
             'This is your OPcache status',

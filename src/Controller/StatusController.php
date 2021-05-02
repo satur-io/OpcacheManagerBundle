@@ -6,7 +6,7 @@ namespace Saturio\OpcacheManagerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class StatusController
+class StatusController implements BaseController
 {
     public function getStatus(): Response
     {

@@ -12,7 +12,8 @@
         <server name="APP_ENV" value="test" force="true" />
         <server name="SHELL_VERBOSITY" value="-1" />
         <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
-        <server name="SYMFONY_PHPUNIT_VERSION" value="8.5" />
+
+        <env name="BOOTSTRAP_CLEAR_CACHE_ENV" value="test"/>
         <server name="KERNEL_CLASS" value="Saturio\OpcacheManagerBundle\Tests\TestApplication\src\Kernel" />
     </php>
 

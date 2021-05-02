@@ -1,4 +1,11 @@
 services:
     Saturio\OpcacheManagerBundle\Tests\Helper\MockClientCallback: ~
-    # Saturio\OpcacheManagerBundle\Tests\Helper\MockTestClient:
-    #    tags: ['test.client']
+
+    http_client:
+        class: Saturio\OpcacheManagerBundle\Tests\Helper\MockHttpClient
+        factory: [Saturio\OpcacheManagerBundle\Tests\Helper\MockHttpClient, create]
+        tags:
+            - { name: 'http_client.client'}
+        public: true
+    Saturio\OpcacheManagerBundle\Tests\Helper\MockHttpClient:
+        alias: 'http_client'

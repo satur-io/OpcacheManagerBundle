@@ -1,3 +1,2 @@
-opcache_routes:
-    resource: .
-    type: opcachemanager
+access:
+    resource: "@SaturioOpcacheManagerBundle/Resources/config/routing.yaml"

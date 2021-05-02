@@ -6,7 +6,7 @@ namespace Saturio\OpcacheManagerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class ResetController
+class ResetController implements BaseController
 {
     public function reset(): Response
     {

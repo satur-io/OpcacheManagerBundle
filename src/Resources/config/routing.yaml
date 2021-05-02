@@ -1,11 +1,11 @@
-opcache_reset:
+saturio_opcache_reset:
     path: /opcache/reset
     controller: Saturio\OpcacheManagerBundle\Controller\ResetController::reset
 
-get_status:
+saturio_get_status:
     path: /opcache/status
     controller: Saturio\OpcacheManagerBundle\Controller\StatusController::getStatus
 
-get_configuration:
+saturio_get_configuration:
     path: /opcache/configuration
     controller: Saturio\OpcacheManagerBundle\Controller\ConfigurationController::getConfiguration

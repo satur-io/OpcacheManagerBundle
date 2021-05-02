@@ -6,7 +6,7 @@ namespace Saturio\OpcacheManagerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class ConfigurationController
+class ConfigurationController implements BaseController
 {
     public function getConfiguration(): Response
     {
