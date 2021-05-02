@@ -26,12 +26,12 @@ class SaturioOpcacheManagerExtension extends Extension
         $defaultUri = $config['server']['default_uri'] ?? 'http://localhost';
 
         $statusCommand = $container->getDefinition('Saturio\OpcacheManagerBundle\Command\StatusCommand');
-        $statusCommand->replaceArgument('$defaultUri', $config['server']['default_uri']);
+        $statusCommand->replaceArgument('$defaultUri', $defaultUri);
 
         $configurationCommand = $container->getDefinition('Saturio\OpcacheManagerBundle\Command\ConfigurationCommand');
-        $configurationCommand->replaceArgument('$defaultUri', $config['server']['default_uri']);
+        $configurationCommand->replaceArgument('$defaultUri', $defaultUri);
 
         $resetCommand = $container->getDefinition('Saturio\OpcacheManagerBundle\Command\ResetCommand');
-        $resetCommand->replaceArgument('$defaultUri', $config['server']['default_uri']);
+        $resetCommand->replaceArgument('$defaultUri', $defaultUri);
     }
 }
